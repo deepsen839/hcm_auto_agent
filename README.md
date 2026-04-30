@@ -415,3 +415,9 @@ Creates structured follow-up tasks.
 # Author
 
 AI-Powered HCP CRM Assistant using LangGraph + FastAPI + React + Groq.
+
+
+set backend/.env 
+
+DATABASE_URL=postgresql://postgres:postgres@db:5432/hcpcrm
+GROQ_API_KEY=
