@@ -1,0 +1,59 @@
+version: '3.9'
+
+services:
+
+  db:
+    image: postgres:16
+    container_name: hcp_db
+
+    restart: always
+
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: hcpcrm
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+
+    container_name: hcp_backend
+
+    restart: always
+
+    ports:
+      - "8000:8000"
+
+    depends_on:
+      - db
+
+    env_file:
+      - ./backend/.env
+
+    volumes:
+      - ./backend:/app
+
+  frontend:
+    build: ./frontend
+
+    container_name: hcp_frontend
+
+    restart: always
+
+    ports:
+      - "5173:5173"
+
+    depends_on:
+      - backend
+
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
+volumes:
+  postgres_data:

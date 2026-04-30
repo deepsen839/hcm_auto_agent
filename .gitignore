@@ -1,0 +1,68 @@
+# =========================
+# Root
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# =========================
+# Backend (FastAPI)
+# =========================
+backend/__pycache__/
+backend/*.py[cod]
+backend/.pytest_cache/
+backend/.coverage
+backend/htmlcov/
+
+# Virtual environments
+backend/.env
+backend/.venv
+backend/venv/
+backend/env/
+
+# Database
+backend/*.sqlite3
+backend/*.db
+
+# Logs
+backend/*.log
+
+# Build files
+backend/build/
+backend/dist/
+backend/*.egg-info/
+
+# =========================
+# Frontend (React + Redux)
+# =========================
+frontend/node_modules/
+
+# Build folders
+frontend/build/
+frontend/dist/
+
+# Environment files
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+
+# Cache
+frontend/.cache/
+frontend/.parcel-cache/
+frontend/.vite/
+frontend/.next/
+
+# TypeScript
+frontend/*.tsbuildinfo
+
+# Coverage
+frontend/coverage/
